@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You've succesfully signed up!"
       session[:user_id] = @user.id
-      redirect_to "/"
+      redirect_to session_path(@user)
     else
       flash[:alert] = "There was a problem signing up."
       redirect_to new_user_path

@@ -1,0 +1,9 @@
+<%= render 'layouts/errors', :object => @question %>
+
+<%= form_for [current_user, @question] do |f| %>
+  <div class="form-group">
+    <%= f.label :question %>
+    <%= f.text_area :question, class: "form-control"%>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

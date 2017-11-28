@@ -1,0 +1,13 @@
+
+
+<% if current_user.questions.any? %>
+  <ul>
+    <% current_user.questions.each do |question| %>
+      <li> <%= question.question %> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h2>You have not asked any questions!</h2>
+<% end %>
+
+<p> <%= link_to "Ask a Question", new_user_question_path(current_user) %> </p>

@@ -4,11 +4,15 @@ class SessionsController < ApplicationController
     if @user
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id
-      redirect_to "/"
+      redirect_to session_path(@user)
     else
       flash[:alert] = "There was a problem signing in. Please try again."
       redirect_to new_session_path
     end
+  end
+
+  def show
+    @current_user
   end
 
   def destroy
