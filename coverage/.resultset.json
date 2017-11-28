@@ -1,11 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/stack_overflow_clone/spec/models/answer_spec.rb": [
+      "/Users/Guest/Desktop/stack_overflow_clone/spec/features/create_account_spec.rb": [
         1,
         null,
         1,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/stack_overflow_clone/spec/rails_helper.rb": [
@@ -294,8 +310,8 @@
         1,
         null,
         1,
-        0,
-        0,
+        12,
+        5,
         null,
         null,
         null,
@@ -317,7 +333,7 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
         null,
         1,
@@ -363,7 +379,7 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -377,24 +393,24 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        1,
+        1,
+        1,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         null,
         1,
         1,
-        0,
+        2,
         null,
         null,
         null
@@ -437,8 +453,8 @@
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
         1,
@@ -483,6 +499,13 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/stack_overflow_clone/spec/models/answer_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/stack_overflow_clone/spec/models/question_spec.rb": [
         1,
         null,
@@ -499,6 +522,6 @@
         null
       ]
     },
-    "timestamp": 1511897081
+    "timestamp": 1511898698
   }
 }
