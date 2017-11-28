@@ -1,5 +1,17 @@
+<h4><%= @question.question %> asked by <%= @user.email %></h4>
+<hr>
+<h5>Responses</h5>
 
+<% if @question.answers.any? %>
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li><%= answer.response %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No one has answered your question yet.</p>
+<% end %>
 
-
-
-<h4><%= @question.question %></h4>  
+<hr>
+<p> <%= link_to "Add a response", new_question_answer_path(@question) %> </p>
+<p><%= link_to "Back to All Questions", questions_path %></p>
