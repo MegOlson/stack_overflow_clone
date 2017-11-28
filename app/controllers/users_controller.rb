@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -13,6 +17,16 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "There was a problem signing up."
       redirect_to new_user_path
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attribute(:is_admin, true)
+      flash[:notice] = "User Admin Status Updated"
+      redirect_to '/questions'
+    else
+      redirect_to '/'
     end
   end
 

@@ -4,4 +4,5 @@ class Question < ActiveRecord::Base
   validates :question, :presence => true
   scope :newest_first, -> { order(created_at: :desc)}
   scope :todays_questions, -> { where("created_at >= ?", (DateTime.now - 1.days)).order(created_at: :desc)}
+
 end

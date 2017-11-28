@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_accessor :password
   validates_confirmation_of :password
   validates :email, :presence => true, :uniqueness => true
-  before_save :encrypt_password
+  before_create :encrypt_password
   has_many :questions
   after_create :set_admin_status
 
@@ -10,6 +10,7 @@ class User < ApplicationRecord
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
   end
+
 
   def set_admin_status
     self.is_admin = false
@@ -24,3 +25,8 @@ class User < ApplicationRecord
     end
   end
 end
+
+# pw hash
+# # $2a$10$UHKIQ7ZcDZYMZ4qcFWoomeWr9BVe3ZYfWK9T7dOq71X3BdTsUiHmW
+# pw salt
+# # $2a$10$UHKIQ7ZcDZYMZ4qcFWoome

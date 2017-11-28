@@ -1,25 +1,30 @@
 <% if current_user %>
-  <h3>Questions Asked</h3>
-  <%= link_to "Add a Question", new_user_question_path(current_user) %>
-  <% if @questions.any? %>
-    <ul>
-      <% @questions.each do |question| %>
-        <li><%= link_to question.question, question_path(question) %> | <%= question.answers.length %> </li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>No questions have been asked.</p>
-  <% end %>
 
-  <% if current_user.email == 'admin' %>
+  <% if current_user.is_admin == true || current_user.email == 'admin'%>
     <div class="daily-stats">
       <div class="well">
         <p>Questions asked today: <%= @todays_questions %></p>
         <p>Answers given today: <%= @todays_answers %></p>
-        <p>Total users: <%= @active_users %></p>
+        <p>Total users: <%= @active_users.length %></p>
+        <ul>
+          <% @active_users.each do |user| %>
+            <li> <%= link_to user.email, user_path(user) %> <br>  </li>
+          <% end %>
+        </ul>
       </div>
     </div>
-
+  <% else %>
+    <h3>Questions Asked</h3>
+    <%= link_to "Add a Question", new_user_question_path(current_user) %>
+    <% if @questions.any? %>
+      <ul>
+        <% @questions.each do |question| %>
+          <li><%= link_to question.question, question_path(question) %> | <%= question.answers.length %> </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No questions have been asked.</p>
+    <% end %>
   <% end %>
 <% else %>
   <h1>Welcome to the Stack Overflow Clone</h1>
