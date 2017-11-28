@@ -3,6 +3,8 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.newest_first
+    @todays_questions = Question.todays_questions.length
+    @todays_answers = Answer.todays_answers.length
   end
 
   def new

@@ -10,6 +10,14 @@
   <% else %>
     <p>No questions have been asked.</p>
   <% end %>
+  <% if current_user.email == 'admin' %>
+    <div class="daily-stats">
+      <div class="well">
+        <p>Questions asked today: <%= @todays_questions %></p>
+        <p>Answers given today: <%= @todays_answers %></p>
+      </div>
+    </div>
+  <% end %>
 <% else %>
   <h1>Welcome to the Stack Overflow Clone</h1>
 <% end %>

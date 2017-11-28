@@ -14,26 +14,26 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-28T11:51:38-08:00">2017-11-28T11:51:38-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-28T13:32:48-08:00">2017-11-28T13:32:48-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.0%</span></span>
+    (<span class="covered_percent"><span class="yellow">82.09%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.95
+         0.96
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>33</b> files in total.
-    <b>200</b> relevant lines. 
-    <span class="green"><b>164</b> lines covered</span> and
+    <b>201</b> relevant lines. 
+    <span class="green"><b>165</b> lines covered</span> and
     <span class="red"><b>36</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -173,11 +173,11 @@
       <tr>
         <td class="strong"><a href="#1c6b0669ea6fd276c2a18f290009535d751f3db2" class="src_link" title="app/models/question.rb">app/models/question.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>6</td>
         <td>5</td>
-        <td>4</td>
-        <td>4</td>
+        <td>5</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -813,7 +813,7 @@
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">    @questions = Question.all</code>
+          <code class="ruby">    @questions = Question.newest_first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1511,8 +1511,8 @@
     <h3>app/models/question.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1544,7 +1544,13 @@
           <code class="ruby">  validates :question, :presence =&gt; true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  scope :newest_first, -&gt; { order(created_at: :desc)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">end</code>
