@@ -4,10 +4,15 @@ class User < ApplicationRecord
   validates :email, :presence => true, :uniqueness => true
   before_save :encrypt_password
   has_many :questions
+  after_create :set_admin_status
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+  end
+
+  def set_admin_status
+    self.is_admin = false
   end
 
   def self.authenticate(email, password)
