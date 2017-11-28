@@ -1,4 +1,4 @@
-class UserConstroller < ApplicationController
+class UsersController < ApplicationController
 
   def new
     @user = User.new
@@ -12,7 +12,7 @@ class UserConstroller < ApplicationController
       redirect_to "/"
     else
       flash[:alert] = "There was a problem signing up."
-      redirect_to new_user
+      redirect_to new_user_path
     end
   end
 
