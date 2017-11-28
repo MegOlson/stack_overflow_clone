@@ -1,14 +1,15 @@
-
 <% if current_user %>
   <h3>Questions Asked</h3>
   <%= link_to "Add a Question", new_user_question_path(current_user) %>
   <% if @questions.any? %>
     <ul>
       <% @questions.each do |question| %>
-        <li><%= link_to question.question, question_path(question) %></li>
+        <li><%= link_to question.question, question_path(question) %> | <%= question.answers.length %> </li>
       <% end %>
     </ul>
   <% else %>
     <p>No questions have been asked.</p>
   <% end %>
+<% else %>
+  <h1>Welcome to the Stack Overflow Clone</h1>
 <% end %>

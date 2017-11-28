@@ -9,15 +9,34 @@
   </head>
 
   <body>
-    <div class="container">
-      <% if current_user %>
-      <%= current_user.email %> | <%= link_to "Sign Out", session_path(current_user),
-                                                  :data => {:confirm => "Are you sure you want to sign out?",
-                                                  :method => "delete"} %>
-      <% else %>
-        <%= link_to "Sign up", new_user_path %> | <%= link_to "Sign in", new_session_path %>
-      <% end %>
 
+    <% if current_user %>
+      <nav class="navbar">
+       <div class="container-fluid">
+        <div class="navbar-header">
+          <br>
+          <a href="/">Home</a>
+        </div>
+         <ul class="nav navbar-nav navbar-right">
+          <li> <br> <%= current_user.email %> </li>
+          <li>
+            <%= link_to "Sign Out", session_path(current_user),
+                :data => {:confirm => "Are you sure you want to sign out?",
+                :method => "delete"} %>
+          </li>
+         </ul>
+       </div>
+     </nav>
+
+    <% else %>
+      <hr>
+      <div class="container">
+        <%= link_to "Sign up", new_user_path %> |
+        <%= link_to "Sign in", new_session_path %>
+      </div>
+    <% end %>
+
+    <div class="container">
       <% if flash[:notice] != nil %>
         <div class="alert alert-success">
           <%= flash[:notice] %>
