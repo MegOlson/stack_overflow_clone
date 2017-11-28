@@ -25,8 +25,3 @@ class User < ApplicationRecord
     end
   end
 end
-
-# pw hash
-# # $2a$10$UHKIQ7ZcDZYMZ4qcFWoomeWr9BVe3ZYfWK9T7dOq71X3BdTsUiHmW
-# pw salt
-# # $2a$10$UHKIQ7ZcDZYMZ4qcFWoome
